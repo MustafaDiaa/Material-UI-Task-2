@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import { Box, Button, Typography } from "@mui/material";
+import newImage from "../../assets/Living Room.jpg";
 
 const ImageTextSection = ({
-  imageSrc,
-  title,
-  paragraph,
-  buttonText,
+  title = "Transform Your Ideas into Reality",
+  paragraph = "Discover innovative solutions tailored to your needs. Our team of experts is dedicated to delivering top-notch services that drive success and growth for your business.",
+  buttonText = "Get Started",
   reverse,
 }) => {
   return (
@@ -14,9 +14,11 @@ const ImageTextSection = ({
         display: "flex",
         flexDirection: reverse ? "row-reverse" : "row",
         alignItems: "center",
-        backgroundColor: "#f5fdfa",
+        backgroundColor: "#e7f9f1",
         marginBottom: "30px",
-        borderRadius: "0",
+        borderRadius: "8px",
+        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+        overflow: "hidden",
       }}
     >
       <Box
@@ -29,13 +31,14 @@ const ImageTextSection = ({
         }}
       >
         <img
-          src={imageSrc}
+          src={newImage}
           alt={title}
           style={{
             maxWidth: "100%",
             height: "auto",
             objectFit: "cover",
             maxHeight: "400px",
+            borderRadius: "8px",
           }}
         />
       </Box>
@@ -43,7 +46,7 @@ const ImageTextSection = ({
       <Box
         sx={{
           flex: 1,
-          padding: "16px",
+          padding: "32px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -51,17 +54,32 @@ const ImageTextSection = ({
           height: "400px",
         }}
       >
-        <Typography variant="h3" component="h3" gutterBottom align="center">
+        <Typography
+          variant="h4"
+          component="h3"
+          gutterBottom
+          align="center"
+          sx={{ fontWeight: "bold", color: "#333" }}
+        >
           {title}
         </Typography>
-        <Typography variant="body1" paragraph align="center">
+        <Typography
+          variant="body1"
+          paragraph
+          align="center"
+          sx={{ color: "#555", mb: 2 }}
+        >
           {paragraph}
         </Typography>
         <Button
           variant="contained"
           sx={{
-            backgroundColor: "black",
+            background: "linear-gradient(90deg, #FF8E53 30%, #FF6A00 90%)",
             color: "white",
+            padding: "10px 20px",
+            "&:hover": {
+              background: "linear-gradient(90deg, #FF6A00 30%, #FF8E53 90%)",
+            },
           }}
         >
           {buttonText}

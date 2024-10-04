@@ -12,11 +12,13 @@ export default function SecondRow() {
         display: "flex",
         justifyContent: "space-between",
         padding: "10px 20px",
+        backgroundColor: "#f5f5f5", // Light gray background for a clean look
+        boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", // Subtle shadow for depth
       }}
     >
       <Grid container spacing={2} alignItems="center">
-        <Grid item>
-          <div style={{ display: "flex", gap: "16px" }}>
+        <Grid item xs>
+          <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
             {[
               "Living",
               "Dining",
@@ -37,7 +39,13 @@ export default function SecondRow() {
                 underline="none"
                 variant="body2"
                 color="inherit"
-                sx={{ fontWeight: "600" }}
+                sx={{
+                  fontWeight: "600",
+                  transition: "color 0.3s",
+                  "&:hover": {
+                    color: "#4CAF50", // Green color on hover
+                  },
+                }}
               >
                 {link}
               </Link>
@@ -53,11 +61,26 @@ export default function SecondRow() {
             inputProps={{
               endAdornment: (
                 <InputAdornment position="end">
-                  <SearchIcon />
+                  <SearchIcon sx={{ color: "#4CAF50" }} />{" "}
+                  {/* Green icon color */}
                 </InputAdornment>
               ),
             }}
-            sx={{ backgroundColor: "#fff", borderRadius: "5px" }}
+            sx={{
+              backgroundColor: "#ffffff",
+              borderRadius: "20px",
+              "& .MuiOutlinedInput-root": {
+                "& fieldset": {
+                  borderColor: "#ddd", // Light border color
+                },
+                "&:hover fieldset": {
+                  borderColor: "#4CAF50", // Green border on hover
+                },
+                "&.Mui-focused fieldset": {
+                  borderColor: "#4CAF50", // Green border when focused
+                },
+              },
+            }}
           />
         </Grid>
       </Grid>

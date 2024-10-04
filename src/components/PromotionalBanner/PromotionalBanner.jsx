@@ -1,13 +1,13 @@
 import { Box, Button, Typography } from "@mui/material";
 import PinterestIcon from "@mui/icons-material/Pinterest";
-import bedroomImage from "../../assets/bedroom.jpg";
+import livingRoom from "../../assets/Living Room.jpg";
 
 export default function PromotionalBanner() {
   return (
     <Box
       sx={{
         position: "relative",
-        backgroundImage: `url(${bedroomImage})`,
+        backgroundImage: `url(${livingRoom})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "400px",
@@ -15,6 +15,8 @@ export default function PromotionalBanner() {
         flexDirection: "column",
         justifyContent: "center",
         padding: "20px",
+        borderRadius: "8px",
+        overflow: "hidden",
       }}
     >
       <Box
@@ -24,7 +26,7 @@ export default function PromotionalBanner() {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.6)",
+          backgroundColor: "rgba(0, 0, 0, 0.8)",
         }}
       />
 
@@ -37,14 +39,17 @@ export default function PromotionalBanner() {
         }}
       >
         <Button
-          variant="outlined"
-          color="secondary"
+          variant="contained"
+          color="primary"
           startIcon={<PinterestIcon />}
           sx={{
             borderRadius: "25px",
-            backgroundColor: "white",
-            color: "black",
-            border: "2px solid #f50057",
+            backgroundColor: "#f50057",
+            color: "white",
+            padding: "8px 16px",
+            "&:hover": {
+              backgroundColor: "#c51162",
+            },
           }}
         >
           Save
@@ -60,12 +65,13 @@ export default function PromotionalBanner() {
           zIndex: 1,
           textAlign: "center",
           color: "#f5f5f5",
+          padding: "10px",
         }}
       >
         <Typography variant="h4" fontWeight="bold" sx={{ mb: 1 }}>
           LABOUR DAY: ENJOY 20% OFF EQ3
         </Typography>
-        <Typography variant="body2">
+        <Typography variant="body2" sx={{ fontWeight: "300" }}>
           Save on designs with longevity in mind. Now until September 3rd.
         </Typography>
       </Box>
