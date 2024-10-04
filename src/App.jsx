@@ -5,7 +5,7 @@ import { AppBar, Typography, Box, Divider } from "@mui/material";
 import PromotionalBanner from "./components/PromotionalBanner/PromotionalBanner";
 import ShopProducts from "./components/ShopProducts/ShopProducts";
 import ImageTextSection from "./components/ImageTextSection/ImageTextSection";
-import img1 from "./assets/bedroom.jpg";
+import img1 from "./assets/Living Room.jpg";
 import Footer from "./components/Footer/Footer";
 
 function App() {
